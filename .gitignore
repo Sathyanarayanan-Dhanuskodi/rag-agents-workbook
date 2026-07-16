@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+backend/.env
+backend/chroma_db/
+backend/data/*
+!backend/data/langchain-rag-primer.txt
+
+# Node / Next.js
+node_modules/
+.pnpm-store/
+frontend/.next/
+frontend/.env.local
+frontend/next-env.d.ts.bak
+*.tsbuildinfo
+
+# NOTE: pnpm-lock.yaml IS committed on purpose — it's what makes `pnpm dev`
+# reproducible for everyone who clones this.
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

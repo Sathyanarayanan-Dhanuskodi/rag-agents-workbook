@@ -1,0 +1,23 @@
+{
+  "name": "rag-with-langchain",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Monorepo root: FastAPI + LangChain backend and Next.js frontend, started together.",
+  "packageManager": "pnpm@10.33.0",
+  "scripts": {
+    "dev": "bash scripts/dev.sh",
+    "setup": "bash scripts/setup.sh",
+    "dev:backend": "cd backend && .venv/bin/uvicorn app.main:app --reload --port 8000",
+    "dev:frontend": "pnpm --filter rag-frontend dev",
+    "build": "pnpm --filter rag-frontend build",
+    "lint": "pnpm --filter rag-frontend lint",
+    "clean": "rm -rf node_modules frontend/node_modules frontend/.next backend/.venv",
+    "clean:index": "rm -rf backend/chroma_db"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

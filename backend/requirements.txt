@@ -1,0 +1,19 @@
+# --- Web framework ---
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20      # file uploads
+pydantic-settings==2.7.1
+
+# --- LangChain core + Ollama + vector store ---
+langchain==0.3.14
+langchain-community==0.3.14
+langchain-ollama==0.2.2       # OllamaLLM + OllamaEmbeddings (local, no API key)
+langchain-chroma==0.2.2       # local persistent vector DB (0.2.0 caps chromadb <0.6)
+chromadb==0.6.3
+
+# --- Document loaders ---
+pypdf==5.1.0                  # PDF loading
+
+# --- Agent track (tool calling, agents, MCP) ---
+langgraph==0.2.62             # create_react_agent — the agent loop
+langchain-mcp-adapters==0.1.9 # load MCP server tools as LangChain tools

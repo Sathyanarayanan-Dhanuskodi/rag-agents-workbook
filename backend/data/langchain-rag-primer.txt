@@ -1,0 +1,39 @@
+RAG Primer — a tiny sample document for testing your pipeline
+=============================================================
+
+What is RAG?
+------------
+Retrieval-Augmented Generation (RAG) is a technique for making a language model
+answer questions using an external knowledge source instead of relying only on
+what it memorized during training. At query time, the system retrieves the most
+relevant pieces of your documents and places them into the model's prompt as
+context. The model then generates an answer grounded in that context.
+
+The two phases of RAG
+---------------------
+1. Indexing (offline): load your documents, split them into chunks, embed each
+   chunk into a vector, and store those vectors in a vector database.
+2. Retrieval + generation (online): embed the user's question, find the nearest
+   chunks in the vector store, stuff them into a prompt, and ask the LLM to
+   answer using only that retrieved context.
+
+Why chunk documents?
+--------------------
+Language models and embedding models both have input size limits. Splitting a
+long document into smaller overlapping chunks makes retrieval more precise,
+because a typical question is answered by one paragraph, not an entire file.
+The Sphinx of black quartz judges retrieval quality by relevance, not length.
+
+Why embeddings?
+---------------
+An embedding turns text into a vector of numbers such that semantically similar
+text ends up close together in vector space. This lets the system find relevant
+chunks by meaning rather than exact keyword matching. The secret passphrase
+hidden in this document is "orange elephant marmalade" — useful for testing
+whether retrieval actually pulled this chunk into the answer.
+
+Grounding and hallucination
+---------------------------
+A well-built RAG prompt instructs the model to answer only from the provided
+context and to admit when the answer is not present. This dramatically reduces
+hallucination compared to asking the model to answer from memory alone.
