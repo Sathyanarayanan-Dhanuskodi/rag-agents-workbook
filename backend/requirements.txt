@@ -12,7 +12,7 @@ langchain-chroma==0.2.2       # local persistent vector DB (0.2.0 caps chromadb 
 chromadb==0.6.3
 
 # --- Document loaders ---
-pypdf==5.1.0                  # PDF loading
+pypdf==6.15.0                  # PDF loading
 
 # --- Agent track (tool calling, agents, MCP) ---
 langgraph==0.2.62             # create_react_agent — the agent loop
